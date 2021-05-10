@@ -32,28 +32,28 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let entry of entries">
+    <tr *ngFor="let resource of resources">
       <td style="color: #696969">
-        <strong>{{ entry.name }}</strong><br>
-        <small class="text-success">{{ entry.date }}</small><br>
-        <small *ngIf="entry.description">{{ entry.description }}</small>
+        <strong>{{ resource.name }}</strong><br>
+        <small class="text-success">{{ resource.date }}</small><br>
+        <small *ngIf="resource.description">{{ resource.description }}</small>
       </td>
 
       <td style="color: #696969">
-        {{ entry.category.name }}
+        {{ resource.category.name }}
       </td>
 
       <td class="text-right" style="color: #696969">
-        <strong [class.text-success]="entry.type == 'revenue'" [class.text-danger]="entry.type == 'expense'">
-          {{ entry.amount }}
+        <strong [class.text-success]="resource.type == 'revenue'" [class.text-danger]="resource.type == 'expense'">
+          {{ resource.amount }}
         </strong>
         <br>
-        <spam class="badge badge-light">{{ entry.paidText }}</spam>
+        <spam class="badge badge-light">{{ resource.paidText }}</spam>
       </td>
 
       <td class="text-center">
-        <a [routerLink]="[entry.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
-        <a (click)="deleteEntry(entry)" class="btn btn-outline-danger btn-sm mr-2">Excluir</a>
+        <a [routerLink]="[resource.id, 'edit']" class="btn btn-outline-info btn-sm mr-2">Editar</a>
+        <a (click)="deleteResource(resource)" class="btn btn-outline-danger btn-sm mr-2">Excluir</a>
       </td>
     </tr>
   </tbody>
