@@ -1,12 +1,8 @@
 import { BaseResourceService } from 'src/app/shared/services/base-resource.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Directive } from '@angular/core';
 import { BaseResourceModel } from 'src/app/shared/models/base-resource.model';
 
-@Component({
-  selector: 'app-base-resource-list',
-  templateUrl: './base-resource-list.component.html',
-  styleUrls: ['./base-resource-list.component.css']
-})
+@Directive()
 export class BaseResourceListComponent<T extends BaseResourceModel> implements OnInit {
   resources: T[] = [];
 
