@@ -10,9 +10,7 @@ import { BaseResourceModel } from 'src/app/shared/models/base-resource.model';
 export class BaseResourceListComponent<T extends BaseResourceModel> implements OnInit {
   resources: T[] = [];
 
-  constructor(
-    private resourceService: BaseResourceService<T>
-  ) { }
+  constructor(protected resourceService: BaseResourceService<T>) { }
 
   ngOnInit(): void {
     this.resourceService.getAll().subscribe(
