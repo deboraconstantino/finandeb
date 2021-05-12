@@ -1,10 +1,16 @@
-<app-bread-crumb [items]="[{text: 'Relatório de Receitas e Despesas'}]"></app-bread-crumb>
+<app-bread-crumb
+  [items]="[{text: 'Relatório de Receitas e Despesas'}]"
+></app-bread-crumb>
 
-<app-page-header page-title="Relatório de Receitas e Despesas" [show-button]="false"></app-page-header>
+<app-page-header
+  page-title="Relatório de Receitas e Despesas"
+  [show-button]="false"
+></app-page-header>
+
 
 <div class="card">
   <div class="card-header">
-    Selecione o mês e ano para gerar o relatório
+    Selecione o Mês e Ano para gerar os relatórios
   </div>
 
   <div class="card-body">
@@ -12,7 +18,7 @@
       <div class="form-group col-md-7">
         <label for="month">Mês</label>
         <select #month name="month" id="month" class="form-control">
-          <option value="">Selecione o mês</option>
+          <option value="">Selecione um mês</option>
           <option value="1">Janeiro</option>
           <option value="2">Fevereiro</option>
           <option value="3">Março</option>
@@ -31,7 +37,8 @@
       <div class="form-group col-md-5">
         <label for="year">Ano</label>
         <select #year name="year" id="year" class="form-control">
-          <option value="">Selecione o ano</option>
+          <option value="">Selecione um ano</option>
+          <option value="2016">2016</option>
           <option value="2017">2017</option>
           <option value="2018">2018</option>
           <option value="2019">2019</option>
@@ -42,7 +49,9 @@
 
     <div class="form-row">
       <div class="col-md text-right">
-        <button type="button" (click)="generateReports()" class="btn btn-primary">Gerar Relatórios</button>
+        <button type="button" (click)="generateReports()" class="btn btn-primary">
+          Gerar Relatórios
+        </button>
       </div>
     </div>
   </div>
@@ -50,23 +59,35 @@
 
 <div class="card-deck mt-5 mb-5">
   <div class="card text-center text-white bg-success">
-    <div class="card-header">Total de Receitas</div>
+    <div class="card-header">
+      TOTAL DE RECEITAS
+    </div>
     <div class="card-body">
-      <h3 class="card-title">{{ revenueTotal }}</h3>
+      <h3 class="card-title">
+        {{revenueTotal}}
+      </h3>
     </div>
   </div>
 
   <div class="card text-center text-white bg-danger">
-    <div class="card-header">Total de Despesas</div>
+    <div class="card-header">
+      TOTAL DE DESPESAS
+    </div>
     <div class="card-body">
-      <h3 class="card-title">{{ expenseTotal }}</h3>
+      <h3 class="card-title">
+        {{expenseTotal}}
+      </h3>
     </div>
   </div>
 
   <div class="card text-center text-white bg-info">
-    <div class="card-header">Saldo</div>
+    <div class="card-header">
+      SALDO
+    </div>
     <div class="card-body">
-      <h3 class="card-title">{{ balance }}</h3>
+      <h3 class="card-title">
+        {{balance}}
+      </h3>
     </div>
   </div>
 </div>
